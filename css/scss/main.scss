@@ -9,8 +9,8 @@
 }
   
 /* Theme Variables */
-$theme: #06A3DA; // theme color
-$theme-secondary: #0b5ed7; // Secondary theme color
+$theme: #f71735; // theme color
+$theme-secondary: #0a0a0a; // Secondary theme color
 $white: #FFFFFF; // White color
 $dark: #212529; // Dark color
 
@@ -241,7 +241,7 @@ a {
 /* Navbar */
 .navbar {
     .navbar-brand img {
-        width: 65px;
+        width: 200px;
         height: auto;
         max-width: 100%;
         pointer-events: none; /* Prevents clicking to protect logo from being downloaded */
@@ -252,7 +252,7 @@ a {
             position: relative;
             margin-left: 25px;
             padding: 35px 0;
-            color: $white;
+            color: #000;
             font-size: 18px;
             font-weight: 600;
             outline: none;
@@ -559,7 +559,7 @@ footer {
         /* Navbar Brand */
         .navbar-brand {
             img {
-                width: 60px;
+                width: 150px;
                 max-width: 100%;
                 height: auto;
             }
@@ -617,7 +617,7 @@ footer {
         background: #FFFFFF;
     }
 
-    /* Comment out or remove the below navbar code if you want the carousel below the navbar */
+    /*  
     .navbar {
         position: absolute;
         width: 100%;
@@ -626,6 +626,7 @@ footer {
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
     }
+    */
 
    /* Gallery */
     .gallery {
@@ -645,109 +646,4 @@ footer {
     .footer {
         padding: 30px 0;
     }
-}
-
-/* Theme Switcher (Dark Mode) */
-/* Dark Theme Variables */
-$dark-bg-color: #121212; // Background color for dark mode
-$dark-text-color: #ffffff; // Text color for dark mode
-$dark-light-bg-color: #1e1e1e; // Light background color for dark mode
-$dark-shadow-color: #333333; // Darker shadow color for dark mode
-
-body.dark-mode {
-  /* Override styles for dark mode */
-  background-color: $dark-bg-color;
-  color: $dark-text-color;
-
-  .bg-white {
-    background-color: $dark-bg-color !important;
-  }
-
-  .text-dark {
-    color: $dark-text-color !important;
-  }
-
-  .bg-light {
-    background-color: $dark-light-bg-color !important;
-  }
-
-  .shadow {
-    box-shadow: 0 0 30px $dark-shadow-color !important; // Darker shadow color for dark mode
-  }
-
-  .btn-outline-dark {
-    color: $dark-text-color !important;
-    border-color: $dark-text-color !important;
-  }
-
-  /* Common Section Styles for Dark Mode */
-  .navbar,
-  footer,
-  .carousel-caption,
-  .testimonial-item,
-  .service-item,
-  .gallery .box,
-  .team-item,
-  .blog-item {
-    background-color: $dark-bg-color;
-    color: $dark-text-color;
-  }
-
-  /* Testimonial Carousel for Dark Mode */
-  .testimonial-carousel {
-    .owl-item.center .testimonial-item {
-      background-color: $dark-bg-color !important;
-      box-shadow: 0 0 30px $dark-shadow-color; // Darker shadow color for dark mode
-    }
-  }
-
-  /* Team Section for Dark Mode */
-  .team-item {
-    &:hover {
-      box-shadow: 0 0 30px $dark-shadow-color; // Darker shadow color for dark mode
-    }
-  }
-
-  /* Form Controls for Dark Mode */
-  .form-control,
-  .form-select {
-    background-color: $dark-bg-color;
-    color: $dark-text-color;
-    
-    &::placeholder {
-      color: $dark-text-color; // Placeholder text color for dark mode
-    }
-  }
-
-  /* Blog Pagination for Dark Mode */
-  .page-link {
-    background-color: $dark-bg-color !important;
-    
-    &:active {
-      background-color: #06A3DA; // Highlight color for active state
-    }
-  }
-
-  /* Sticky Top Navbar for Dark Mode */
-  .sticky-top.navbar {
-    .navbar-nav {
-      .nav-link {
-        color: $dark-text-color;
-      }
-    }
-  }
-
-  /* Responsive Styles for Dark Mode (Smartphones and Tablets) */
-  @media (max-width: 991.98px) {
-    .navbar {
-      .navbar-nav {
-        .nav-link {
-          &,
-          &.show {
-            color: $dark-text-color;
-          }
-        }
-      }
-    }
-  }
 }
