@@ -369,11 +369,12 @@ footer {
                 transform: translate(-50%, -50%);
                 text-align: center;
                 z-index: 2; // Ensure the caption is above the overlay
-                width: 50%; // Ensure it scales well on different screen sizes
+                width: 60%; // Ensure it scales well on different screen sizes
                 padding: 0 15px; // Add some padding to ensure content doesn't touch edges
 
                 h1 {
-                    font-size: 2.8rem;
+                    font-size: 3.5rem;
+                    font-weight: bolder;
                 }
 
                 p {

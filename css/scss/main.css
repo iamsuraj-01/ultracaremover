@@ -324,11 +324,12 @@ footer .link-animated a:hover {
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 2;
-  width: 50%;
+  width: 60%;
   padding: 0 15px;
 }
 .carousel .carousel-inner .carousel-item .carousel-caption h1 {
-  font-size: 2.8rem;
+  font-size: 3.5rem;
+  font-weight: bolder;
 }
 .carousel .carousel-inner .carousel-item .carousel-caption p {
   font-size: 1.25rem;
