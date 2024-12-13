@@ -149,6 +149,20 @@
             $('#autoWidth').removeClass('cs-hidden');
         }
     });
+
+    // Whatsapp Button
+    document.addEventListener("DOMContentLoaded", function() {
+        var whatsappLink = document.getElementById("whatsapp-link");
+        var phoneNumber = "919760676500"; // Your WhatsApp number
+        
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // Mobile devices
+            whatsappLink.href = "https://wa.me/" + phoneNumber;
+        } else {
+            // Desktop devices
+            whatsappLink.href = "https://web.whatsapp.com/send?phone=" + phoneNumber;
+        }
+    });
     
 })(jQuery);
 
