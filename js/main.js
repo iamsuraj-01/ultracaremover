@@ -164,7 +164,7 @@
         }
     });
 
-    // Registration Form Submission
+    // Enquiry Form Submission
 	$(document).ready(function () {
 		$("#enquiryForm").on("submit", function (event) {
 			event.preventDefault(); // Prevent the default form submission
@@ -179,13 +179,49 @@
 
 			// Create an array for the message lines
 			const messageLines = [
-				`Enquiry By User:`,
+				`Enquiry By Customer:`,
 				`Full Name: ${fullName}`,
                 `Email: ${email}`,
 				`Contact No: ${contactNo}`,
 				`Service Type: ${serviceType}`,
 				`Shifting From: ${shiftingFrom}`,
 				`Shifting To: ${shiftingTo}`,
+				`Message: ${message}`
+			];
+
+			// Join the message lines with line breaks
+			const whatsappMessage = messageLines.join('\n');
+
+			// Detect if the user is on mobile or desktop
+			const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+			const whatsappUrl = isMobile
+				? `https://wa.me/9760676500?text=${encodeURIComponent(whatsappMessage)}` // Mobile link
+				: `https://web.whatsapp.com/send?phone=9760676500&text=${encodeURIComponent(whatsappMessage)}`; // WhatsApp Web link
+
+			// Open WhatsApp link
+			window.open(whatsappUrl, '_blank');
+
+			// Show Thank You Modal
+			$("#thankYouModal").modal('show');
+		});
+	});
+
+    // Contact Form Submission
+	$(document).ready(function () {
+		$("#contactForm").on("submit", function (event) {
+			event.preventDefault(); // Prevent the default form submission
+
+			const fullName = $("input[name='fullName']").val();
+			const contactNo = $("input[name='contactNo']").val();
+			const subject = $("input[name='subject']").val();
+			const message = $("textarea[name='message']").val();
+
+			// Create an array for the message lines
+			const messageLines = [
+				`Customer Query:`,
+				`Full Name: ${fullName}`,
+				`Contact No: ${contactNo}`,
+				`Subject: ${subject}`,
 				`Message: ${message}`
 			];
 
