@@ -163,6 +163,48 @@
             whatsappLink.href = "https://web.whatsapp.com/send?phone=" + phoneNumber;
         }
     });
+
+    // Registration Form Submission
+	$(document).ready(function () {
+		$("#enquiryForm").on("submit", function (event) {
+			event.preventDefault(); // Prevent the default form submission
+
+			const fullName = $("input[name='fullName']").val();
+            const email = $("input[name='email']").val();
+			const contactNo = $("input[name='contactNo']").val();
+			const serviceType = $("input[name='serviceType']").val();
+			const shiftingFrom = $("input[name='shiftingFrom']").val();
+			const shiftingTo = $("input[name='shiftingTo']").val();
+			const message = $("textarea[name='message']").val();
+
+			// Create an array for the message lines
+			const messageLines = [
+				`Enquiry By User:`,
+				`Full Name: ${fullName}`,
+                `Email: ${email}`,
+				`Contact No: ${contactNo}`,
+				`Service Type: ${serviceType}`,
+				`Shifting From: ${shiftingFrom}`,
+				`Shifting To: ${shiftingTo}`,
+				`Message: ${message}`
+			];
+
+			// Join the message lines with line breaks
+			const whatsappMessage = messageLines.join('\n');
+
+			// Detect if the user is on mobile or desktop
+			const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+			const whatsappUrl = isMobile
+				? `https://wa.me/9760676500?text=${encodeURIComponent(whatsappMessage)}` // Mobile link
+				: `https://web.whatsapp.com/send?phone=9760676500&text=${encodeURIComponent(whatsappMessage)}`; // WhatsApp Web link
+
+			// Open WhatsApp link
+			window.open(whatsappUrl, '_blank');
+
+			// Show Thank You Modal
+			$("#thankYouModal").modal('show');
+		});
+	});
     
 })(jQuery);
 
